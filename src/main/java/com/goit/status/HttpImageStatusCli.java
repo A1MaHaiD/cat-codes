@@ -28,10 +28,10 @@ public class HttpImageStatusCli {
 
     public void askStatus() {
         Scanner scanner = new Scanner(System.in);
-        statusCode = scanner.nextInt();
-        System.out.println("Enter HTTP status code:");
+        System.out.print("Enter HTTP status code:");
         if (scanner.hasNextInt()) {
             try {
+                statusCode = scanner.nextInt();
                 downloader.downloadStatusImage(statusCode);
             } catch (Exception e) {
                 throw new StatusInternalErrorException("", e);
